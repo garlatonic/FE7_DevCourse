@@ -1,0 +1,16 @@
+npm 프로젝트 초기화 (package.json 파일 생성)
+npm init -y
+
+-y 옵션은 기본값으로 입력해주는 프로퍼티 작업?
+
+npm install typescript -D
+typescript라는 컴파일러를 해당 폴더에 설치하겠다
+
+
+npx tsc --init
+npx <- node package를 실행할 때
+npx tsc <- tsc를 찾아 실행하겠다 (자기가 알아서 node_modules 뒤짐. 없으면 인터넷으로 다운받아서 설치할거냐고 물어봄)
+
+tsconfig.json 파일이 생성되었다고 함
+터미널로 접속한 폴더에 생성됨
+생성된 파일의 내용은 타입스크립트 해당 버전의 권장옵션

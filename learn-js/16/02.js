@@ -58,3 +58,7 @@ console.log(navigator)
 
 // 1.3.4 location
 // host, hostname, href, origin, pathname, port, protocol 등 내용을 가져올 수 있음
+// console.log(window.location);
+// window.location.href = "https://sucoding.kr";
+// window.location.assign("https://www.sucoding.kr");
+// window.location.reload();
