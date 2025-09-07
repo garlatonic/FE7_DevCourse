@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Paint App</title>
+		<link rel="stylesheet" href="./layout.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+			integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
+	<body>
+		<main>
+			<aside id="util" class="print-util">
+				<ul class="pallet">
+					<li><button data-color="red" class="red selected">red</button></li>
+					<li><button data-color="blue" class="blue">blue</button></li>
+					<li><button data-color="green" class="green">green</button></li>
+					<li><button data-color="black" class="black">black</button></li>
+				</ul>
+				<ul>
+					<li>
+						<button id="eraser" class="control">
+							<i class="fa-solid fa-eraser"></i>
+						</button>
+					</li>
+					<li>
+						<button id="download" class="control">
+							<i class="fa-solid fa-download"></i>
+						</button>
+					</li>
+				</ul>
+			</aside>
+			<canvas id="canvas" class="print-canvas"></canvas>
+		</main>
+		<script src="./script.js"></script>
+	</body>
+</html>
