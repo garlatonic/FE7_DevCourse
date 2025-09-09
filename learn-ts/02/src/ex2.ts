@@ -14,7 +14,7 @@
 	// 함수 정의
 	const doubleValue = function (value: number | string): number | string {
 		if (typeof value === "number") return value * 2;
-		else return value.repeat(2);
+		else return value.length * 2; // 문제를 잘못 이해함 ㄷㄷ
 	};
 
 	// 함수 호출
@@ -27,9 +27,16 @@
 {
 	// 함수 정의
 	const multiplyArrays = (arr1: number[], arr2: number[]): number[] => {
-		if (arr1.length <= arr2.length)
-			return arr1.map((v, i) => v * (arr2[i] || 0));
-		else return arr2.map((v, i) => v * (arr1[i] || 0));
+		// if (arr1.length <= arr2.length)
+		// 	return arr1.map((v, i) => v * (arr2[i] || 0));
+		// else return arr2.map((v, i) => v * (arr1[i] || 0));
+		const minLength = Math.min(arr1.length, arr2.length);
+		return Array.from({ length: minLength }, (_, index) => {
+			const a = arr1[index];
+			const b = arr2[index];
+			if (a !== undefined && b !== undefined) return a * b;
+			return 0;
+		});
 	};
 
 	// 함수 호출
@@ -43,11 +50,12 @@
 {
 	// 함수 정의
 	const intersection = function (arr1: number[], arr2: number[]): number[] {
-		const result: number[] = [];
-		arr1.map((el) => {
-			arr2.includes(el) && result.push(el);
-		});
-		return result;
+		// const result: number[] = [];
+		// arr1.map((el) => {
+		// 	arr2.includes(el) && result.push(el);
+		// });
+		// return result;
+		return arr1.filter((num) => arr2.includes(num));
 	};
 
 	// 함수 호출
@@ -73,7 +81,8 @@
 {
 	// 함수 정의
 	const combineStrings = function (str1: string, str2: string): string {
-		return str1 + str2;
+		// return str1 + str2;
+		return `${str1}${str2}`
 	};
 
 	// 함수 호출
