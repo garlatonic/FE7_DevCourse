@@ -21,4 +21,16 @@
 twMerge('px-2 py-1 bg-red hover:bg-dark-red', 'p-3 bg-[#B91C1C]')
 → 'hover:bg-dark-red p-3 bg-[#B91C1C]'
 
+1.4. CSS-IN-JS
+1.4.1. CSS를 자바스크립트 코드 안에서 작성하고 사용하는 방식
+1.4.2. 유명한 CSS-IN-JS
+1.4.2.1. styled-components
+1.4.2.1.1. styled-components 개발이 공식 종료됨 -> 유지보수 모드
+1.4.2.2. emotion
+CSS를 자바스크립트가 생성 -> 자바스크립트 런타임에 CSS가 생성됨
+-> CSS-IN-JS 스타일링을 많이 할 수록 자바스크립트 런타임에 처리되는 코드 양이 많아짐
+
+1.4.2.3. vanilla extract
+1.4.2.3.1 제로-런-타임(zero-run-time) : 빌드할 때 CSS 생성
+
 */
