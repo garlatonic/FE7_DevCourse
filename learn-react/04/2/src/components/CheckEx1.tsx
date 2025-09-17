@@ -1,24 +1,35 @@
-import type React from "react";
-import check from "../assets/check.svg";
+import { twMerge } from "tailwind-merge";
 
-export default function CheckEx1({
-	id,
-	message,
-	className,
-}: {
-	id: string;
-	message: string;
-	className: string;
-}) {
+type CheckBoxProps = React.ComponentPropsWithoutRef<"input"> & {
+	message: React.ReactNode;
+};
+
+export default function CheckEx1(props: CheckBoxProps) {
+	const { id, type, message, ...rest } = props;
 	return (
-		<div className={className}>
-			<input
-				id={id}
-				type="checkbox"
-				className={`w-5 h-5 appearance-none bg-gray rounded-xs checked:bg-[url:${check}]`}
-			/>
-			<label htmlFor={id} className="text-white font-medium ">
-				{message}
+		<div className={""}>
+			<label htmlFor={id} className={"checkbox center gap-2"}>
+				<input id={id} type={type} className={"peer sr-only"} {...rest} />
+				<span
+					className={twMerge(
+						"center w-5 h-5 bg-gray rounded-xs cursor-pointer",
+						"[&>svg]:opacity-0 peer-checked:[&>svg]:opacity-100",
+					)}
+				>
+					<svg
+						width="13"
+						height="9"
+						viewBox="0 0 13 9"
+						stroke="white"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M11.799 0.766652C11.7246 0.691687 11.6362 0.632186 11.5387 0.59158C11.4413 0.550975 11.3367 0.530069 11.2311 0.530069C11.1255 0.530069 11.021 0.550975 10.9235 0.59158C10.8261 0.632186 10.7376 0.691687 10.6633 0.766652L4.70466 6.73325L2.20125 4.22184C2.12405 4.14727 2.03292 4.08863 1.93306 4.04928C1.8332 4.00992 1.72657 3.99062 1.61925 3.99248C1.51193 3.99434 1.40603 4.01731 1.30759 4.0601C1.20915 4.10288 1.1201 4.16464 1.04552 4.24184C0.970951 4.31903 0.912313 4.41017 0.872959 4.51003C0.833605 4.60989 0.814306 4.71652 0.816162 4.82384C0.818019 4.93116 0.840996 5.03706 0.883781 5.1355C0.926565 5.23394 0.98832 5.32299 1.06552 5.39756L4.1368 8.46884C4.21115 8.54381 4.29961 8.60331 4.39708 8.64391C4.49454 8.68452 4.59908 8.70542 4.70466 8.70542C4.81025 8.70542 4.91479 8.68452 5.01225 8.64391C5.10972 8.60331 5.19818 8.54381 5.27253 8.46884L11.799 1.94238C11.8802 1.86748 11.945 1.77658 11.9893 1.6754C12.0336 1.57423 12.0565 1.46497 12.0565 1.35451C12.0565 1.24406 12.0336 1.1348 11.9893 1.03362C11.945 0.932449 11.8802 0.841549 11.799 0.766652V0.766652Z"
+							fill="white"
+						/>
+					</svg>
+				</span>
+				<span className="message text-white font-medium">{message}</span>
 			</label>
 		</div>
 	);

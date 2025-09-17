@@ -1,7 +1,9 @@
 @import "tailwindcss";
+@utility bd-gray { @apply border-[#4f4f4f]}
 @utility bg-gray { @apply bg-[#4f4f4f]}
 @utility bg-red { @apply bg-[#ED4848]}
 @utility bg-purple { @apply bg-[#7D48ED]}
 @utility center { @apply flex justify-center items-center}
 
 @utility button { @apply center w-[77px] h-11 bg-gray rounded-lg text-sm font-medium text-white cursor-pointer disabled:cursor-not-allowed }
+@utility input { @apply w-60 h-11 px-4 border bd-gray rounded-lg bg-white text-sm font-medium text-black }
