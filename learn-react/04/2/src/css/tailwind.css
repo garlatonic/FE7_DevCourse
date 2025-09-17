@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@utility bg-gray { @apply bg-[#4f4f4f]}
+@utility bg-red { @apply bg-[#ED4848]}
+@utility bg-purple { @apply bg-[#7D48ED]}
+@utility center { @apply flex justify-center items-center}
+
+@utility button { @apply center w-[77px] h-11 bg-gray rounded-lg text-sm font-medium text-white cursor-pointer disabled:cursor-not-allowed }
