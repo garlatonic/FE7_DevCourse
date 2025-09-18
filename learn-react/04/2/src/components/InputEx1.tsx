@@ -1,15 +1,14 @@
 import { twMerge } from "tailwind-merge";
 
-type InputProps = React.ComponentPropsWithoutRef<"input">;
+type InputProps = Omit<React.ComponentPropsWithoutRef<"input">, "type"> & {
+	type: "text" | "password" | "email" | "number" | "date";
+};
 
 export default function InputEx1(props: InputProps) {
-	const { id, type, ...rest } = props;
+	const { ...rest } = props;
 	return (
 		<>
 			<input
-				id={id}
-				type={type}
-				placeholder="Enter Todo List"
 				className={twMerge(`input inter placeholder:text-[#acacac]`)}
 				{...rest}
 			/>
