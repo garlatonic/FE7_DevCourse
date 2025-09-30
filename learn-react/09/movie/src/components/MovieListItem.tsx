@@ -1,16 +1,13 @@
+import { format } from "date-fns";
 import { star } from "../assets/movies/assets";
 
 export default function MovieListItem({
-	poster_path,
-	overview,
 	title,
 	vote_average,
-}: {
-	poster_path: string;
-	overview: string;
-	title: string;
-	vote_average: number;
-}) {
+	release_date,
+	poster_path,
+	overview,
+}: MovieType) {
 	return (
 		<>
 			<div>
@@ -35,7 +32,9 @@ export default function MovieListItem({
 							{(vote_average / 2)?.toFixed(1)}
 						</span>
 					</div>
-					<span className="text-yellow-500 font-bold">2.1</span>
+					<span className="text-yellow-500 font-bold">
+						{format(new Date(release_date), "MM.DD")}
+					</span>
 				</div>
 			</div>
 		</>
